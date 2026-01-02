@@ -67,7 +67,7 @@ export default function Home() {
             gap:"2rem"
         }}
     >
-        <h1>BASIC CRUD OPERATIONSss</h1>
+        <h1>BASIC CRUD OPERATIONS</h1>
         {/* hero 1 */}
         <div
             style={{
