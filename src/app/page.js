@@ -129,9 +129,6 @@ export default function Home() {
                     >
                         <div>
                             <div>
-                                Product ID
-                            </div>
-                            <div>
                                 {product.id}
                             </div>
                         </div>
