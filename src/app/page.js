@@ -110,34 +110,77 @@ export default function Home() {
             </div>
         </div>
         {/* hero 2 */}
-        <div>
-            <h2
+        <div style={{ width: "100%", maxWidth: "600px" }}>
+            
+
+            <table
                 style={{
-                    textAlign:"center"
+                    width: "100%",
+                    borderCollapse: "collapse",
+                    border: "1px solid #ccc",
                 }}
             >
-                Product List
-            </h2>
-            {
-                products.map((product) => (
-                    <div
-                        key={product.id}
+                <thead>
+                <tr style={{ backgroundColor: "#f5f5f5" }}>
+                    <th
                         style={{
-                            display:"flex",
-                            gap:"5rem"
+                            border: "1px solid #ccc",
+                            padding: "8px",
+                            textAlign: "left",
                         }}
                     >
-                        <div>
-                            <div>
-                                {product.id}
-                            </div>
-                        </div>
-                        <div>
+                        Product ID
+                    </th>
+                    <th
+                    style={{
+                        border: "1px solid #ccc",
+                        padding: "8px",
+                        textAlign: "left",
+                    }}
+                    >
+                        Product Name
+                    </th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {products.length === 0 ? (
+                    <tr>
+                        <td
+                            colSpan={2}
+                            style={{
+                                padding: "10px",
+                                textAlign: "center",
+                                color: "#777",
+                            }}
+                        >
+                            No products found
+                        </td>
+                    </tr>
+                ) : (
+                    products.map((product) => (
+                    <tr key={product.id}>
+                            <td
+                            style={{
+                                border: "1px solid #ccc",
+                                padding: "8px",
+                            }}
+                            >
+                            {product.id}
+                            </td>
+                        <td
+                        style={{
+                            border: "1px solid #ccc",
+                            padding: "8px",
+                        }}
+                        >
                             {product.name}
-                        </div>
-                    </div>
-                ))
-            }
+                        </td>
+                    </tr>
+                    ))
+                )}
+                </tbody>
+            </table>
         </div>
     </div>
   );
